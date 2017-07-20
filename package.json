@@ -1,0 +1,57 @@
+{
+  "name": "jflex_dev",
+  "version": "2.0.0",
+  "description": "jflex library",
+  "main": "index.js",
+  "scripts": {
+    "prod": "set NODE_ENV=production",
+    "dev": "set NODE_ENV=development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/alphacrew/library_full.git"
+  },
+  "keywords": [
+    "jflex",
+    "gulp"
+  ],
+  "author": "Dimitry Lutsenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/alphacrew/library_full/issues"
+  },
+  "homepage": "https://gitlab.com/alphacrew/library_full#README",
+  "dependencies": {
+    "critical": "^0.8.4",
+    "fg-loadcss": "^1.3.1"
+  },
+  "devDependencies": {
+    "gulp-git": "^2.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "del": "^3.0.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cached": "^1.1.1",
+    "gulp-clean-css": "^3.6.0",
+    "gulp-debug": "^3.1.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-remember": "^0.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-multi-inheritance": "^1.0.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp.spritesmith": "^6.5.1",
+    "stream-combiner2": "^1.1.1",
+    "through2": "^2.0.3",
+    "vinyl-ftp": "^0.6.0"
+  }
+}
