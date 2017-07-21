@@ -130,7 +130,7 @@ input {
     color: #1caf6f;
     padding: 10px 0px 0;
     overflow: hidden;
-    height: 90px
+    height: 125px
 }
 
 .block-wrapper .block span.title img,
@@ -601,12 +601,12 @@ p.top img {
 #menu li {
     list-style-type: none;
     background: url(/images/li/green-dot.gif) no-repeat 0 6px;
-    font-size: 14px;
+    font-size: 17px;
     font-style: italic;
     color: #5c5c5c;
     margin-top: 10px;
     margin-left: 20px;
-    padding-left: 15px
+    padding: 0 0 5px 15px
 }
 
 #menu li a {
@@ -622,15 +622,19 @@ p.top img {
     font-weight: bold
 }
 
+#menu li.active li:first-of-type {
+    padding-top: 6px;
+}
+
 #menu li.active li {
     list-style-type: none;
     background: url(/images/li/arrow.gif) no-repeat 0 4px;
-    font-size: 12px;
+    font-size: 13px;
     font-style: italic;
     margin-top: 10px;
+    margin-left: 0;
     font-weight: normal;
-    padding-left: 10px;
-    margin-left: 0
+    padding: 3px 5px 3px 10px;
 }
 
 #menu li.active a {
@@ -965,14 +969,17 @@ body {
     #menu li.active li {
         padding-left: 30px;
         margin: 0;
-        font-size: 10px
+        font-size: 13px
     }
     #wrapper {
         min-width: 100%;
         max-width: 100%
     }
     .sl {
-        position: fixed
+        position: fixed;
+        max-height: 100vh;
+        overflow: hidden;
+        overflow-y: auto;
     }
     .sl .logo {
         padding: 0
@@ -1019,15 +1026,10 @@ body {
     .allblock1 {
         display: none !important
     }
-    .block-wrapper .block1 {
-        background-size: 51%;
-        background-repeat: initial;
-        height: 120px
-    }
     .block-wrapper .block {
         background-size: 51%;
         background-repeat: initial;
-        height: 120px
+        height: 140px
     }
     .text-wrapper .right-block {
         float: left;
@@ -1091,11 +1093,11 @@ body {
     }
 }
 
-@media screen and (max-width: 360px) {
+/*@media screen and (max-width: 360px) {
     #menu li {
-        font-size: 12px
+        font-size: 17px
     }
-}
+}*/
 
 .table_responsive_1-col {
     width: 100% !important;
