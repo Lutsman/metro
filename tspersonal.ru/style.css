@@ -117,6 +117,7 @@ input {
     background-repeat: no-repeat;
     background-position: top left;
     background-image: url(/images/blocks/angle-left1.png);
+    background-size: 51% auto;
     height: 170px;
     padding: 15px 10px
 }
@@ -130,7 +131,7 @@ input {
     color: #1caf6f;
     padding: 10px 0px 0;
     overflow: hidden;
-    height: 125px
+    height: 90px
 }
 
 .block-wrapper .block span.title img,
@@ -858,15 +859,15 @@ p.top img {
 }
 
 .sl .h1 {
-    display: none
+    display: none;
 }
 
 .sl .h2 {
-    display: none
+    display: none;
 }
 
 .sl .logo img:nth-child(2) {
-    display: none
+    display: none;
 }
 
 .mobblock1 {
@@ -875,7 +876,8 @@ p.top img {
     font-size: 12px;
     color: #5c5c5c;
     font-weight: normal;
-    font-style: normal
+    font-style: normal;
+    margin-left: 10px;
 }
 
 #content > div.top > div > div:nth-child(1) > div > p:nth-child(1) > span.title > span:nth-child(4) > a,
@@ -1020,16 +1022,22 @@ body {
         margin-bottom: 5px;
         height: auto
     }
+    .block-wrapper .block span.title {
+        height: 125px;
+    }
     .mobblock1 {
         display: block
     }
     .allblock1 {
         display: none !important
     }
+    .block-wrapper .block1 {
+        height: 140px;
+    }
     .block-wrapper .block {
         background-size: 51%;
         background-repeat: initial;
-        height: 140px
+        height: 140px;
     }
     .text-wrapper .right-block {
         float: left;
