@@ -1,0 +1,227 @@
+/* ���� ������ */
+a:link{color: #327094; text-decoration:underline;}
+/* ���� ���������� ������ */
+a:visited{color: #5c568b;}
+/* ���� ������ ��� ��������� ����� */
+a:hover{color: #ff0000;text-decoration:none;}
+/* ���� �������� ������ */
+a:active{color: #000000;}
+
+/* �������� ����� (������, � �.�.) */
+td{font-size:14px;}
+
+/* ��������� �� ������� � ��. ������� ���� */
+.red{color: #ff0000;}
+
+/* ������ �� ���������� ������ �������� (��, ��� �� ��������� ��� ������ ������) */
+span.sclc a:link{font-size:16px; color:#327094; text-decoration:none; font-weight: bold;}
+span.sclc a:visited{font-size:16px; color:#5c568b; text-decoration:none; font-weight: bold;}
+span.sclc a:hover{font-size:16px; color:#ff0000; text-decoration:underline; font-weight: bold;}
+span.sclc a:active{font-size:16px; color:#000000; text-decoration:underline; font-weight: bold;}
+
+/* ���������� ����� �������� �� ���������� ������ �������� (�� � ����) */
+.sclc p{margin:8px;}
+
+/* ����� ������ � ��������� ������ � �������� � ��.�������� */
+.ptitle{font-size: 22px;}
+
+/* ������� ������� �� ��.�������� */
+table.MainProdTbl{width:100%;}
+
+/* ������� ������� � �������� */
+table.ProdTbl{width:100%;}
+table.ProdTbl td{vertical-align:top;}
+
+/* div � ������������ ������ � �������� */
+.CatPrImg{
+float:left;
+margin-right:5px;
+margin-bottom:3px;
+}
+
+/* div � ������������ ������ �� ��.�������� */
+.MainPrImg{
+float:left;
+margin-right:5px;
+margin-bottom:3px;
+}
+
+/* div � ������������ ������ ��� ������ */
+.SearchPrImg{
+float:right;
+margin-left:5px;
+margin-bottom:3px;
+}
+
+
+/* BEGIN ��������� ������� � ����� �����������, �������, � ���������� ������ � �.�. */
+	.coltbl{
+	border-top: 1px outset #f0f0f4;
+	border-right: 1px ridge #f0f0f4;
+	border-bottom: 1px ridge #f0f0f4;
+	border-left: 1px outset #f0f0f4;
+	width: 100%;
+	}
+
+	.coltbl td{
+	padding:4px;
+	}
+
+	/* ��������� ������� */
+	.htr{background-color: #ddeded;
+	color:#345A70; font-weight:bold;
+	height: 20px;
+	}
+	.htr td{
+	vertical-align:top;
+	background-image: url(../img/hbg.gif);
+	background-repeat: repeat-x;
+	font-size: 14px;
+	}
+
+	/* ������� ������ */
+	.str{background-color: #ffffff;}
+	/* ����� ������ */
+	.ttr{background-color: #f8fafa;}
+	/* ������ ����� (�� �������.) */
+	.ftr{background-color: #e2e7e7;}
+	/* ������ ����� ������� */
+	.CartFtr{background-color: #ffffff;}
+	/* ������� ������ ������ ����� ������� */
+	.CartTotal td{padding: 4px 0px 4px 0px; border-bottom: solid 1px #000000;}
+/* END ��������� �������*/
+
+
+/* BEGIN ������� ������ ������������ ���� */
+	.vMenuTbl{
+	border-top: 1px outset #f0f0f4;
+	border-right: 1px ridge #f0f0f4;
+	border-bottom: 1px ridge #f0f0f4;
+	border-left: 1px outset #f0f0f4;
+	width: 100%;
+	}
+
+	/* ������ */
+	.vMenuTbl td a{
+	text-decoration: none;
+	}
+
+	/* ������ ��� ��������� ����� */
+	.vMenuTbl td a:hover{
+	text-decoration: underline;
+	}
+/* END ������� ������ ������������ ���� */
+
+
+/* BEGIN ��������� ������ ������������ ���� */
+	.vMenuHtr td{
+	background-color: #ddeded;
+	color:#345A70;
+	font-weight:bold;
+	padding:0px;
+	background-image: url(../img/hbg.gif);
+	background-repeat: repeat-x;
+	height: 20px;
+	font-size: 14px;
+	padding:4px;
+	}
+	/* ������ */
+	.vMenuHtr td a:link{text-decoration: underline;}
+	/* ���������� ������ */
+	.vMenuHtr td a:visited{text-decoration: underline;}
+	/* ������ ��� ��������� ����� */
+	.vMenuHtr td a:hover{text-decoration: none;}
+	/* div � ������������ � ��������� */
+	.vMenuHImg{float:right; padding: 4px;}
+/* END ��������� ������ ������������ ���� */
+
+
+/* BEGIN ���� ����. ���� �������� */
+	.MnuCat{width: 100%;}
+	.MnuCat td{border-bottom: 1px dashed #cccccc;}
+
+	/* ������ */
+	.MnuCat td a{
+	display: block;
+	text-decoration: none;
+	padding: 4px;
+	width: 100%
+	}
+
+	/* ������ ��� ��������� ����� */
+	.MnuCat td a:hover{
+	background-color: #f8fafa;
+	text-decoration: underline;
+	}
+
+	/* ���������� � ���� �������� */
+	.MnuCat ul{
+	margin-left:12px;
+	padding-left:0px;
+	margin-top:0px;
+	margin-bottom:10px;
+	list-style-type: none;
+	}
+
+	/* �������� ������ */
+	.OpenedCat{padding:4px;font-weight:bold;color:#345A70;}
+/* END ���� ����. ���� �������� */
+
+
+/* BEGIN ������� ����� ����. ���� ����� ������� */
+	.NewProdTbl{
+	margin:0px;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	}
+
+	.NewProdTbl td{
+	text-decoration: none;
+	border-bottom: 1px dashed #cccccc;
+	padding:4px;
+	}
+
+	/* ������ */
+	.NewProdTbl td a{
+	text-decoration: none;
+	}
+/* END ������� ����� ����. ���� ����� ������� */
+
+
+/* BEGIN ������� ����� ����. ���� �������� */
+	.NewsMenuTbl{width:100%;}
+
+	.NewsMenuTbl td{
+	border-bottom: 1px dashed #cccccc;
+	padding:4px;
+	}
+/* END ������� ����� ����. ���� �������� */
+
+
+/* BEGIN ������� ����� ����. ���� ������� */
+	.MnuCart{width: 100%;}
+	.MnuCart td{padding: 4px;}
+/* END ������� ����� ����. ���� ������� */
+
+
+/* BEGIN �������������� ���� */
+	.HorMenu{
+	height:50px;
+	border-bottom: 2px inset #f0f0f4;
+	}
+
+	/* ������ */
+	.HorMenu a{text-decoration: none;}
+
+	/* ������ ��� ��������� ����� */
+	.HorMenu a:hover{text-decoration: underline;}
+/* END �������������� ���� */
+
+
+/* BEGIN 2-��� ��������� ������ */
+.htr2{background-color: #d4e8e8;
+color:#345A70; font-weight:bold;
+height: 20px;
+}
+/* END 2-��� ��������� ������ */
