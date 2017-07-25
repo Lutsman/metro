@@ -1,84 +1,94 @@
-@media screen and (max-width: 959px) {
-  .col {
-    border: none;
-
-    &.t1 {
-      width: 8.333%;
-    }
-    &.t2 {
-      width: 16.666%;
-    }
-    &.t3 {
-      width: 25%;
-    }
-    &.t4 {
-      width: 33.333%;
-    }
-    &.t5 {
-      width: 41.666%;
-    }
-    &.t6 {
-      width: 50%;
-    }
-    &.t7 {
-      width: 58.333%;
-    }
-    &.t8 {
-      width: 66.666%;
-    }
-    &.t9 {
-      width: 75%;
-    }
-    &.t10 {
-      width: 83.333%;
-    }
-    &.t11 {
-      width: 91.666%;
-    }
-    &.t12 {
-      width: 100%;
+/*before tablet*/
+@media (max-width: 1023px) {
+  header {
+    .phone {
+      font-size: 16px;
     }
   }
 }
 
-@media screen and (max-width: 640px) {
-  .col {
+/* tablets */
+@media (max-width: 959px) {
+  header {
+    min-height: 20px;
+  }
 
-    &.m1 {
-      width: 8.333%;
+  .header__menu__wrap {
+    display: none;
+  }
+
+  #m-menu-btn-wrapper {
+    visibility: visible;
+  }
+
+  .main_pic {
+    margin-top: 30px;
+  }
+
+  .action_container {
+    position: static;
+    left: 0;
+  }
+
+  /*Media for mobiles*/
+  #scrollUp {
+    &:hover {
+      border-color: #000;
+      background-color: transparent;
+      .upButton {
+        border-top: 2px solid #000;
+        border-left: 2px solid #000;
+      }
     }
-    &.m2 {
-      width: 16.666%;
+
+    &.active {
+      border-color: $blue;
+      background: $blue;
+      .upButton {
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+      }
     }
-    &.m3 {
-      width: 25%;
+  }
+
+}
+
+/*mobile*/
+@media (max-width: 640px) {
+  #wrapper {
+    padding-bottom: 140px;
+  }
+
+  .pop_new_menu_li {
+    font-size: 20px;
+    padding: 10px 5px 11px 5px;
+  }
+
+  .product_one {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto 50px;
+  }
+
+  footer {
+    margin: -140px auto 0;
+    height: 140px;
+
+    .copyright {
+      text-align: center;
+      margin: 15px 0 0 0;
     }
-    &.m4 {
-      width: 33.333%;
+
+    .neprosto {
+      text-align: center;
+      margin: 15px 0 0 0;
     }
-    &.m5 {
-      width: 41.666%;
-    }
-    &.m6 {
-      width: 50%;
-    }
-    &.m7 {
-      width: 58.333%;
-    }
-    &.m8 {
-      width: 66.666%;
-    }
-    &.m9 {
-      width: 75%;
-    }
-    &.m10 {
-      width: 83.333%;
-    }
-    &.m11 {
-      width: 91.666%;
-    }
-    &.m12 {
-      width: 100%;
-    }
+  }
+}
+
+@media (max-width: 480px) {
+  .pop_new_menu_li {
+    font-size: 13px;
+    padding: 10px 0 11px 0;
   }
 }
