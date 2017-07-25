@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  @include box-sizing(border-box);
+}
+
+body, header, footer, div, nav, ul, form {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* grid system */
+
+.row {
+  font-size: 0;
+
+  &.inline {
+    white-space:nowrap;
+  }
+  .col {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    min-height: 1px;
+    font-size: 16px;
+  }
+}
+
+.col {
+
+  &.d1 {
+    width: 8.333%;
+  }
+  &.d2 {
+    width: 16.666%;
+  }
+  &.d3 {
+    width: 25%;
+  }
+  &.d4 {
+    width: 33.333%;
+  }
+  &.d5 {
+    width: 41.666%;
+  }
+  &.d6 {
+    width: 50%;
+  }
+  &.d7 {
+    width: 58.333%;
+  }
+  &.d8 {
+    width: 66.666%;
+  }
+  &.d9 {
+    width: 75%;
+  }
+  &.d10 {
+    width: 83.333%;
+  }
+  &.d11 {
+    width: 91.666%;
+  }
+  &.d12 {
+    width: 100%;
+  }
+}
+
+/* grid spaces */
+
+.row {
+  &.sp-5 {
+    margin-right: -5px;
+    margin-left: -5px;
+
+    > .col {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+  &.sp-10 {
+    margin-right: -10px;
+    margin-left: -10px;
+
+    > .col {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+  &.sp-15 {
+    margin-right: -15px;
+    margin-left: -15px;
+
+    > .col {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  &.sp-20 {
+    margin-right: -20px;
+    margin-left: -20px;
+
+    > .col {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+}
+
+/* aligns */
+
+.middle {
+  vertical-align: middle;
+
+  .col {
+    vertical-align: middle;
+  }
+}
+
+.bottom {
+  vertical-align: bottom;
+
+  .col {
+    vertical-align: bottom;
+  }
+}

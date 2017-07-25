@@ -1,0 +1,105 @@
+@mixin box-sizing($box-sizing) {
+  -moz-box-sizing: $box-sizing;
+  -webkit-box-sizing: $box-sizing;
+  box-sizing: $box-sizing;
+}
+
+@mixin border-radius($rads...) {
+    -moz-border-radius: $rads;
+    -webkit-border-radius: $rads;
+    border-radius: $rads;
+}
+
+@mixin box-shadow($shadows...) {
+    -moz-box-shadow: $shadows;
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+@mixin linearGradient($top, $bottom){
+  background: $bottom; /* Old browsers */
+  background: -moz-linear-gradient(top,  $top 1%, $bottom 99%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, $top), color-stop(99%, $bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 1%, $bottom 99%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 1%, $bottom 99%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 1%, $bottom 99%); /* IE10+ */
+  background: linear-gradient(to bottom,  $top 1%, $bottom 99%); /* W3C */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$top}', EndColorStr='#{$bottom}')"; /* IE6-9 */
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($transitions...) {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    -o-transition: $transitions;
+    transition: $transitions;
+}
+
+@mixin transition-delay($transition-delay) {
+    -webkit-transition-delay: $transition-delay;
+    -moz-transition-delay: $transition-delay;
+    -o-transition-delay: $transition-delay;
+    transition-delay: $transition-delay;
+}
+
+@mixin transform($transform) {
+  -ms-transform: $transform;
+  -moz-transform: $transform;
+  -webkit-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transform-origin($transform-origins...) {
+  -ms-transform-origin: $transform-origins;
+  -moz-transform-origin: $transform-origins;
+  -webkit-transform-origin: $transform-origins;
+  -o-transform-origin: $transform-origins;
+  transform-origin: $transform-origins;
+}
+
+@mixin user-select($user-select) {
+    -ms-user-select: $user-select;
+    -moz-user-select: $user-select;
+    -webkit-user-select: $user-select;
+    user-select: $user-select;
+}
+
+@mixin column-count($column-count) {
+    -webkit-column-count: $column-count;
+    -moz-column-count: $column-count;
+    column-count: $column-count;
+}
+
+@mixin animation($animation...) {
+    -o-animation: $animation;
+    -moz-animation: $animation;
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+@mixin animation-delay($animation-delay) {
+  -o-animation-delay: $animation-delay;
+  -moz-animation-delay: $animation-delay;
+  -webkit-animation-delay: $animation-delay;
+  animation-delay: $animation-delay;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
