@@ -14,6 +14,11 @@
   src: local("TrebuchetMS"), url('../fonts/TrebuchetMS.ttf') format("truetype"), url('../fonts/TrebuchetMS.svg') format("svg");
 }
 
+@font-face {
+  font-family: 'ASLRubl';
+  src: url('../fonts/rouble.otf') format('opentype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1038,5 +1043,5 @@ footer {
 }*/
 
 
-
+@import "new-style";
 @import "adaptive";

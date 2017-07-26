@@ -380,6 +380,9 @@ table.ProdTbl {
   font-family: 'TrebuchetMS';
   src: url("../fonts/TrebuchetMS.eot");
   src: local("TrebuchetMS"), url("../fonts/TrebuchetMS.ttf") format("truetype"), url("../fonts/TrebuchetMS.svg") format("svg"); }
+@font-face {
+  font-family: 'ASLRubl';
+  src: url("../fonts/rouble.otf") format("opentype"); }
 * {
   margin: 0;
   padding: 0; }
@@ -1267,6 +1270,100 @@ footer {
   width: 20%;
   margin: 15px 0 0 10px;
 }*/
+h1 {
+  font-size: 26px;
+  line-height: 30px;
+  margin: 18px 0; }
+
+h2 {
+  font-size: 24px;
+  font-family: TrebuchetMS;
+  font-weight: normal;
+  line-height: 28px;
+  margin: 15px 0; }
+
+p {
+  margin-bottom: 10px; }
+
+ol {
+  padding-left: 20px; }
+
+.center {
+  text-align: center; }
+
+.left {
+  text-align: left; }
+
+.right {
+  text-align: right; }
+
+.fl-right {
+  float: right; }
+
+.fl-left {
+  float: left; }
+
+.accent {
+  font-weight: bold; }
+  .accent.red {
+    color: #FF0000; }
+  .accent.blue {
+    color: #1d39ca; }
+  .accent.green {
+    color: #039400; }
+
+.upper {
+  text-transform: uppercase; }
+
+/*content*/
+.content-block {
+  font-size: 14px;
+  margin: 0 0 40px 0; }
+
+.text-block {
+  margin: 0 0 20px 0; }
+  .text-block .img-wrap.fl-right {
+    margin-left: 20px; }
+    .text-block .img-wrap.fl-right.extra-margin {
+      margin-left: 40px; }
+  .text-block .img-wrap.fl-left {
+    margin-right: 20px; }
+    .text-block .img-wrap.fl-left.extra-margin {
+      margin-right: 40px; }
+  .text-block ol {
+    margin-bottom: 10px; }
+
+.brand {
+  text-align: center;
+  margin: 0 0 20px 0; }
+  .brand .img-wrap {
+    height: 80px;
+    margin-bottom: 10px; }
+    .brand .img-wrap img {
+      max-width: 100%;
+      max-height: 100%; }
+  .brand .title {
+    font-size: 16px; }
+
+.breadcrumbs .title {
+  float: left;
+  margin-right: 5px;
+  font-weight: bold; }
+.breadcrumbs li {
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+  position: relative; }
+  .breadcrumbs li::before {
+    content: '/';
+    line-height: 15px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -7px; }
+  .breadcrumbs li:last-of-type::before {
+    display: none; }
+
 /*before tablet*/
 @media (max-width: 1023px) {
   header .phone {
@@ -1315,6 +1412,23 @@ footer {
     display: block;
     max-width: 250px;
     margin: 0 auto 50px; }
+
+  .text-block .img-wrap {
+    text-align: center;
+    margin-bottom: 20px; }
+    .text-block .img-wrap.fl-right {
+      float: none;
+      margin-left: 0; }
+      .text-block .img-wrap.fl-right.extra-margin {
+        margin-left: 0; }
+    .text-block .img-wrap.fl-left {
+      float: none;
+      margin-right: 0; }
+      .text-block .img-wrap.fl-left.extra-margin {
+        margin-right: 0; }
+
+  .brand .img-wrap {
+    margin-bottom: 20px; }
 
   footer {
     margin: -140px auto 0;

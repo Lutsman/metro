@@ -70,6 +70,39 @@
     margin: 0 auto 50px;
   }
 
+  .text-block {
+
+    .img-wrap {
+      text-align: center;
+      margin-bottom: 20px;
+
+      &.fl-right {
+        float: none;
+        margin-left: 0;
+
+        &.extra-margin {
+          margin-left: 0;
+        }
+      }
+
+      &.fl-left {
+        float: none;
+        margin-right: 0;
+
+        &.extra-margin {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .brand {
+    .img-wrap {
+      margin-bottom: 20px;
+    }
+  }
+
+
   footer {
     margin: -140px auto 0;
     height: 140px;
