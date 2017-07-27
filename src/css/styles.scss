@@ -6,18 +6,18 @@
 
 a {
 	&:link {
-		color: #327094;
+		color: $anchor-color;
 		text-decoration: underline;
 	}
 	&:visited {
-		color: #5c568b;
+		color: $purple;
 	}
 	&:hover {
-		color: #ff0000;
+		color: $red;
 		text-decoration: none;
 	}
 	&:active {
-		color: #000000;
+		color: $black;
 	}
 }
 

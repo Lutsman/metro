@@ -2,9 +2,9 @@
 
 
 h1 {
-  font-size: 26px;
-  line-height: 30px;
-  margin: 18px 0;
+  font-size: 32px;
+  line-height: 38px;
+  margin: 18px 0 30px 0;
 }
 
 h2 {
@@ -12,7 +12,13 @@ h2 {
   font-family: $trebuchet;
   font-weight: normal;
   line-height: 28px;
-  margin: 15px 0;
+  margin: 0 0 30px 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 p {
@@ -57,6 +63,18 @@ ol {
   &.green {
     color: $green;
   }
+}
+
+.red {
+  color: $red;
+}
+
+.blue {
+  color: $blueDark;
+}
+
+.green {
+  color: $green;
 }
 
 .upper {
@@ -115,6 +133,8 @@ ol {
 }
 
 .breadcrumbs {
+  margin-bottom: 35px;
+
   .title {
     float: left;
     margin-right: 5px;
@@ -140,7 +160,317 @@ ol {
       display: none;
     }
   }
+}
+
+.panel {
+  border-radius: 3px;
+  border: 2px solid $purple;
+  color: $purple;
+  display: inline-block;
+  vertical-align: top;
+
+  @include border-radius(3px);
+}
 
 
+/*card*/
+.card-block {
+  margin-bottom: 10px;
+
+  .img-wrap {
+
+    img {
+      border: 1px solid #000;
+    }
+  }
+
+  .caption {
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+}
+
+.card-info {
+  .title {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 38px;
+    margin-bottom: 8px;
+  }
+
+  .marker {
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    color: $red;
+    padding: 10px 15px;
+    margin-bottom: 27px;
+    display: inline-block;
+
+    &.enable {
+      color: #62a014;;
+    }
+  }
+
+  .price {
+    color: $blueRoyal;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 23px;
+  }
+
+  .tips {
+    margin-bottom: 35px;
+  }
+
+  .guarantee {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 9px 0 7px;
+    height: 55px;
+
+    span.number {
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    span {
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+
+  .certificate {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 13px 8px 0 57px;
+    margin-left: 13px;
+    height: 55px;
+    position: relative;
+
+    &::before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: 11px;
+      left: 7px;
+      width: 44px;
+      height: 33px;
+      background: url("../img/icon-certificate.png") no-repeat;
+    }
+  }
+
+  .service-price {
+    margin-bottom: 66px;
+
+    a.purple {
+      &:link {
+        color: $purple;
+      }
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    span {
+      width: 150px;
+      line-height: 28px;
+      display: inline-block;
+    }
+
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      width: auto;
+      margin: 0 0 0 10px;
+    }
+
+  }
+
+  .purchase {
+    margin-bottom: 40px;
+
+    .btn {
+      width: 154px;
+      height: 44px;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      float: left;
+      @include border-radius(5px);
+    }
+
+    .btn-card {
+      color: #f1f1f1;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28px;
+      background-image: linear-gradient(to right, #0d7ff2 0%, #3b70c8 100%);
+      padding-top: 8px;
+    }
+
+    .btn-fast-order {
+      color: #0d7ff2;
+      border: 2px solid #0d7ff2;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 18px;
+      padding-top: 11px;
+      margin-left: 11px;
+    }
+  }
+}
+
+.characteristics {
+  padding: 25px 0 57px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+
+  .table {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+
+    .cell {
+      padding: 20px 10px 0 20px;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      height: 72px;
+    }
+  }
+}
+
+.description {
+  margin: 45px 0 62px;
+
+  h2 {
+    margin-bottom: 34px;
+  }
+
+  h3 {
+    margin: 0 0 28px 0;
+  }
+
+  .caption {
+    font-size: 16px;
+    margin: 0 0 34px;
+  }
+
+  ul {
+    padding-left: 18px;
+
+    li {
+      line-height: 26px;
+    }
+  }
+
+}
+
+.payment-methods {
+  color: #fff;
+  background-image: linear-gradient(to right, #795a90 0%, #0d7ff2 100%);
+  padding: 48px 85px 53px 85px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 56px;
+  }
+
+  .col {
+    &:first-of-type {
+      text-align: left;
+    }
+
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+
+  .method {
+    padding-left: 107px;
+    position: relative;
+    line-height: 81px;
+    display: inline-block;
+    margin-bottom: 60px;
+
+    &::before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 81px;
+      height: 81px;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .icon-cash {
+    &::before {
+      background: url("../img/icon-cash.png") no-repeat;
+    }
+  }
+
+  .icon-transfer {
+    &::before {
+      background: url("../img/icon-transfer.png") no-repeat;
+    }
+  }
+
+  .icon-visa {
+    &::before {
+      background: url("../img/icon-visa.png") no-repeat;
+    }
+  }
+}
+
+.value {
+
+  h2 {
+    font-weight: 700;
+  }
+
+  .panel {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    padding-top: 72px;
+    width: 115px;
+    height: 115px;
+    position: relative;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+    }
+
+    &.icon-cash::before {
+      width: 51px;
+      height: 45px;
+      top: 16px;
+      left: 33px;
+      background: url("../img/icon-money-purple.png") no-repeat;
+    }
+
+    &.icon-bank::before {
+      width: 42px;
+      height: 43px;
+      top: 17px;
+      left: 37px;
+      background: url("../img/icon-bank-purple.png") no-repeat;
+    }
+
+    &.icon-visa::before {
+      width: 74px;
+      height: 23px;
+      top: 29px;
+      left: 19px;
+      background: url("../img/icon-visa-purple.png") no-repeat;
+    }
+
+  }
 }
 

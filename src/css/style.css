@@ -21,7 +21,7 @@ body::after, header::after, footer::after, div::after, nav::after, ul::after, fo
     vertical-align: top;
     position: relative;
     min-height: 1px;
-    font-size: 13px; }
+    font-size: 15px; }
 
 .col.d1 {
   width: 8.333%; }
@@ -139,15 +139,15 @@ body::after, header::after, footer::after, div::after, nav::after, ul::after, fo
     width: 100%; } }
 /* ���� ������ */
 a:link {
-  color: #327094;
+  color: #147ded;
   text-decoration: underline; }
 a:visited {
-  color: #5c568b; }
+  color: #805e8f; }
 a:hover {
-  color: #ff0000;
+  color: #FF0000;
   text-decoration: none; }
 a:active {
-  color: #000000; }
+  color: #000; }
 
 /* ���� ���������� ������ */
 /* ���� ������ ��� ��������� ����� */
@@ -395,10 +395,10 @@ body {
   color: #000;
   min-height: 100%;
   background: #fff;
-  font-size: 13px; }
+  font-size: 15px; }
 
 a {
-  color: #1d39ca;
+  color: #147ded;
   outline: none;
   text-decoration: underline; }
   a:hover {
@@ -1271,16 +1271,21 @@ footer {
   margin: 15px 0 0 10px;
 }*/
 h1 {
-  font-size: 26px;
-  line-height: 30px;
-  margin: 18px 0; }
+  font-size: 32px;
+  line-height: 38px;
+  margin: 18px 0 30px 0; }
 
 h2 {
   font-size: 24px;
   font-family: TrebuchetMS;
   font-weight: normal;
   line-height: 28px;
-  margin: 15px 0; }
+  margin: 0 0 30px 0; }
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px; }
 
 p {
   margin-bottom: 10px; }
@@ -1311,6 +1316,15 @@ ol {
     color: #1d39ca; }
   .accent.green {
     color: #039400; }
+
+.red {
+  color: #FF0000; }
+
+.blue {
+  color: #1d39ca; }
+
+.green {
+  color: #039400; }
 
 .upper {
   text-transform: uppercase; }
@@ -1345,24 +1359,227 @@ ol {
   .brand .title {
     font-size: 16px; }
 
-.breadcrumbs .title {
-  float: left;
-  margin-right: 5px;
-  font-weight: bold; }
-.breadcrumbs li {
-  float: left;
-  list-style: none;
-  margin-right: 10px;
+.breadcrumbs {
+  margin-bottom: 35px; }
+  .breadcrumbs .title {
+    float: left;
+    margin-right: 5px;
+    font-weight: bold; }
+  .breadcrumbs li {
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+    position: relative; }
+    .breadcrumbs li::before {
+      content: '/';
+      line-height: 15px;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -7px; }
+    .breadcrumbs li:last-of-type::before {
+      display: none; }
+
+.panel {
+  border-radius: 3px;
+  border: 2px solid #805e8f;
+  color: #805e8f;
+  display: inline-block;
+  vertical-align: top;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; }
+
+/*card*/
+.card-block {
+  margin-bottom: 10px; }
+  .card-block .img-wrap img {
+    border: 1px solid #000; }
+  .card-block .caption p {
+    margin-bottom: 30px; }
+
+.card-info .title {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 38px;
+  margin-bottom: 8px; }
+.card-info .marker {
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  color: #FF0000;
+  padding: 10px 15px;
+  margin-bottom: 27px;
+  display: inline-block; }
+  .card-info .marker.enable {
+    color: #62a014; }
+.card-info .price {
+  color: #147ded;
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 23px; }
+.card-info .tips {
+  margin-bottom: 35px; }
+.card-info .guarantee {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 9px 0 7px;
+  height: 55px; }
+  .card-info .guarantee span.number {
+    font-size: 24px;
+    font-weight: 900; }
+  .card-info .guarantee span {
+    font-size: 15px;
+    font-weight: 700; }
+.card-info .certificate {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 13px 8px 0 57px;
+  margin-left: 13px;
+  height: 55px;
   position: relative; }
-  .breadcrumbs li::before {
-    content: '/';
-    line-height: 15px;
+  .card-info .certificate::before {
+    content: ' ';
     display: block;
     position: absolute;
-    top: 0;
-    right: -7px; }
-  .breadcrumbs li:last-of-type::before {
-    display: none; }
+    top: 11px;
+    left: 7px;
+    width: 44px;
+    height: 33px;
+    background: url("../img/icon-certificate.png") no-repeat; }
+.card-info .service-price {
+  margin-bottom: 66px; }
+  .card-info .service-price a.purple:link {
+    color: #805e8f; }
+  .card-info .service-price a.purple:hover {
+    color: #FF0000; }
+  .card-info .service-price span {
+    width: 150px;
+    line-height: 28px;
+    display: inline-block; }
+  .card-info .service-price .price {
+    font-size: 16px;
+    font-weight: bold;
+    width: auto;
+    margin: 0 0 0 10px; }
+.card-info .purchase {
+  margin-bottom: 40px; }
+  .card-info .purchase .btn {
+    width: 154px;
+    height: 44px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    float: left;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; }
+  .card-info .purchase .btn-card {
+    color: #f1f1f1;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    background-image: linear-gradient(to right, #0d7ff2 0%, #3b70c8 100%);
+    padding-top: 8px; }
+  .card-info .purchase .btn-fast-order {
+    color: #0d7ff2;
+    border: 2px solid #0d7ff2;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    padding-top: 11px;
+    margin-left: 11px; }
+
+.characteristics {
+  padding: 25px 0 57px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black; }
+  .characteristics .table {
+    border-top: 1px solid black;
+    border-left: 1px solid black; }
+    .characteristics .table .cell {
+      padding: 20px 10px 0 20px;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      height: 72px; }
+
+.description {
+  margin: 45px 0 62px; }
+  .description h2 {
+    margin-bottom: 34px; }
+  .description h3 {
+    margin: 0 0 28px 0; }
+  .description .caption {
+    font-size: 16px;
+    margin: 0 0 34px; }
+  .description ul {
+    padding-left: 18px; }
+    .description ul li {
+      line-height: 26px; }
+
+.payment-methods {
+  color: #fff;
+  background-image: linear-gradient(to right, #795a90 0%, #0d7ff2 100%);
+  padding: 48px 85px 53px 85px;
+  text-align: center; }
+  .payment-methods h2 {
+    margin-bottom: 56px; }
+  .payment-methods .col:first-of-type {
+    text-align: left; }
+  .payment-methods .col:last-of-type {
+    text-align: right; }
+  .payment-methods .method {
+    padding-left: 107px;
+    position: relative;
+    line-height: 81px;
+    display: inline-block;
+    margin-bottom: 60px; }
+    .payment-methods .method::before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 81px;
+      height: 81px;
+      left: 0;
+      top: 0; }
+  .payment-methods .icon-cash::before {
+    background: url("../img/icon-cash.png") no-repeat; }
+  .payment-methods .icon-transfer::before {
+    background: url("../img/icon-transfer.png") no-repeat; }
+  .payment-methods .icon-visa::before {
+    background: url("../img/icon-visa.png") no-repeat; }
+
+.value h2 {
+  font-weight: 700; }
+.value .panel {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  padding-top: 72px;
+  width: 115px;
+  height: 115px;
+  position: relative; }
+  .value .panel::before {
+    content: ' ';
+    position: absolute; }
+  .value .panel.icon-cash::before {
+    width: 51px;
+    height: 45px;
+    top: 16px;
+    left: 33px;
+    background: url("../img/icon-money-purple.png") no-repeat; }
+  .value .panel.icon-bank::before {
+    width: 42px;
+    height: 43px;
+    top: 17px;
+    left: 37px;
+    background: url("../img/icon-bank-purple.png") no-repeat; }
+  .value .panel.icon-visa::before {
+    width: 74px;
+    height: 23px;
+    top: 29px;
+    left: 19px;
+    background: url("../img/icon-visa-purple.png") no-repeat; }
 
 /*before tablet*/
 @media (max-width: 1023px) {
@@ -1371,7 +1588,8 @@ ol {
 /* tablets */
 @media (max-width: 959px) {
   header {
-    min-height: 20px; }
+    min-height: 20px;
+    margin-bottom: 20px; }
 
   .header__menu__wrap {
     display: none; }

@@ -45,35 +45,35 @@ const base = "src";
 
 gulp.task('clean', () => {
   console.log(isDevelopment);
-  console.log(process.env.NODE_ENV);
-  return del(dest);
+console.log(process.env.NODE_ENV);
+return del(dest);
 });
 
 gulp.task('critical', () => {
   return critical.generate({
-          inline: true,
-          base: './',
-          css: [
-            'src/css/normalize.min.css',
-            'src/css/styles.min.css',
-            'src/css/jquery.mmenu.min.css',
-            'src/css/jquery.mmenu.themes.min.css'
-          ],
-          src: 'src/index.html',
-          dest: 'dist/index.html',
-          minify: false,
-          include: [
-            '#m-menu:not(.mm-menu)',
-            '.mm-menu.mm-offcanvas'
-          ],
-          dimensions: [{
-            width: 1366,
-            height: 900,
-          }, {
-            width: 700,
-            height: 500,
-          }]
-        });
+    inline: true,
+    base: './',
+    css: [
+      'src/css/normalize.min.css',
+      'src/css/styles.min.css',
+      'src/css/jquery.mmenu.min.css',
+      'src/css/jquery.mmenu.themes.min.css'
+    ],
+    src: 'src/index.html',
+    dest: 'dist/index.html',
+    minify: false,
+    include: [
+      '#m-menu:not(.mm-menu)',
+      '.mm-menu.mm-offcanvas'
+    ],
+    dimensions: [{
+      width: 1366,
+      height: 900,
+    }, {
+      width: 700,
+      height: 500,
+    }]
+  });
 });
 
 gulp.task('lint', () => {
@@ -82,30 +82,30 @@ gulp.task('lint', () => {
 
 gulp.task('assets', () => {
   return gulp.src(pathNames.src.assets, {base: base, since: gulp.lastRun('assets')})
-    /*.on('data', (file) => {
-      console.log({
-        contents: file.contents,
-        path: file.path,
-        cwd: file.cwd,
-        base: file.base,
-        relative: file.relative,
-        dirname: file.dirname,
-        basename: file.basename,
-        stem: file.stem,
-        extname: file.extname
-      });
-      //console.dir(file);
-    })*/
+  /*.on('data', (file) => {
+   console.log({
+   contents: file.contents,
+   path: file.path,
+   cwd: file.cwd,
+   base: file.base,
+   relative: file.relative,
+   dirname: file.dirname,
+   basename: file.basename,
+   stem: file.stem,
+   extname: file.extname
+   });
+   //console.dir(file);
+   })*/
     .pipe(newer(dest))
     //.pipe(debug({title: 'assets'}))
     .pipe(gulp.dest(dest));
 });
 
 gulp.task('img', () => {
-    return gulp.src(pathNames.src.img, {base: base, since: gulp.lastRun('img')})
-      .pipe(newer(dest))
-      //.pipe(debug({title: 'img:start'}))
-      .pipe(imagemin([
+  return gulp.src(pathNames.src.img, {base: base, since: gulp.lastRun('img')})
+    .pipe(newer(dest))
+    //.pipe(debug({title: 'img:start'}))
+    .pipe(imagemin([
         imagemin.gifsicle({interlaced: true}),
         imagemin.jpegtran({progressive: true}),
         imagemin.optipng({optimizationLevel: 5}),
@@ -127,20 +127,20 @@ gulp.task('css', () => {
 
 gulp.task('sass', () => {
   return gulp.src(pathNames.src.sassLib, {base: base/*, since: gulp.lastRun('sass:lib')*/})
-    //.pipe(newer(dest))
-    //.pipe(debug({title: 'sass:lib'}))
+  //.pipe(newer(dest))
+  //.pipe(debug({title: 'sass:lib'}))
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     //.pipe(remember('sass:lib'))
     .pipe(sass().on('error', notify.onError()))
     .pipe(cleanCSS({rebaseTo: ''}))
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
     .pipe(gulp.dest(dest));
-    //.pipe(debug({title: 'sass:lib:output'}));
+//.pipe(debug({title: 'sass:lib:output'}));
 });
 
 gulp.task('sass:theme', () => {
   return gulp.src(pathNames.src.sassTheme, {base: base, since: gulp.lastRun('sass:theme')})
-    //.pipe(newer(dest))
+  //.pipe(newer(dest))
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({rebaseTo: ''}))
@@ -154,39 +154,39 @@ gulp.task('js', () => {
     //.pipe(debug({title: 'js'}))
     .pipe(eslint({
       configFile: 'eslint.json'/*,
-      globals: [
-        'jQuery',
-        '$'
-      ]*/
+       globals: [
+       'jQuery',
+       '$'
+       ]*/
     }))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(gulpIf(!isDevelopment, uglify()))
     .pipe(rename((path) => {
-      let pattern = '.min';
+        let pattern = '.min';
 
-      if (~path.basename.indexOf(pattern)) return;
+if (~path.basename.indexOf(pattern)) return;
 
-      path.basename += pattern;
-    }))
-    .pipe(gulpIf(isDevelopment, sourcemaps.write()))
-    .pipe(gulp.dest(dest));
+path.basename += pattern;
+}))
+.pipe(gulpIf(isDevelopment, sourcemaps.write()))
+  .pipe(gulp.dest(dest));
 });
 
 gulp.task('js:ES6', () => {
   return gulp.src(pathNames.src.jsES6, {base: base, since: gulp.lastRun('js:ES6')})
-    /*.pipe(newer({
-      dest: dest,
-      map: function (relative) {
-        return relative.replace('.es6', '');
-      }
-    }))*/
-    //.pipe(debug({title: 'js:ES6'}))
-    /*.pipe(plumber({
-      errorHandler: notify.onError
-    }))*/
-    //.pipe(debug({title: 'js:ES6:1'}))
+  /*.pipe(newer({
+   dest: dest,
+   map: function (relative) {
+   return relative.replace('.es6', '');
+   }
+   }))*/
+  //.pipe(debug({title: 'js:ES6'}))
+  /*.pipe(plumber({
+   errorHandler: notify.onError
+   }))*/
+  //.pipe(debug({title: 'js:ES6:1'}))
     .pipe(eslint({
       configFile: 'eslint.json'
     }))
@@ -200,15 +200,15 @@ gulp.task('js:ES6', () => {
     .pipe(gulpIf(!isDevelopment, uglify()))
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
     .pipe(rename((path) => {
-      //console.dir(path);
+        //console.dir(path);
 
-      let pattern = '.es6';
-      let newName = path.basename.slice(0, path.basename.indexOf(pattern));
+        let pattern = '.es6';
+let newName = path.basename.slice(0, path.basename.indexOf(pattern));
 
-      path.basename = newName;
-    }))
-    //.pipe(debug({title: 'js:ES6:2'}))
-    .pipe(gulp.dest(dest));
+path.basename = newName;
+}))
+//.pipe(debug({title: 'js:ES6:2'}))
+.pipe(gulp.dest(dest));
 });
 
 //gulp.task('lint:js')
@@ -216,31 +216,31 @@ gulp.task('js:ES6', () => {
 gulp.task('watch', () => {
   gulp.watch(pathNames.src.assets, gulp.series('assets'));
 
-  gulp.watch(pathNames.src.cssLib, gulp.series('css:lib'));
-  gulp.watch(pathNames.src.cssFonts, gulp.series('css:fonts'));
+gulp.watch(pathNames.src.cssLib, gulp.series('css:lib'));
+gulp.watch(pathNames.src.cssFonts, gulp.series('css:fonts'));
 
-  gulp.watch('dev/css/**/*.scss', gulp.series('sass:lib'));
-  gulp.watch(pathNames.src.sassTheme, gulp.series('sass:theme'));
+gulp.watch('dev/css/**/*.scss', gulp.series('sass:lib'));
+gulp.watch(pathNames.src.sassTheme, gulp.series('sass:theme'));
 
-  gulp.watch(pathNames.src.js, gulp.series('js'));
-  gulp.watch(pathNames.src.jsES6, gulp.series('js:ES6'));
+gulp.watch(pathNames.src.js, gulp.series('js'));
+gulp.watch(pathNames.src.jsES6, gulp.series('js:ES6'));
 });
 
 /*gulp.task('build',
-  gulp.series(
-    'clean',
-    gulp.parallel(
-      'assets', 'img', 'css:fonts', 'sass:theme', 'css:lib', 'sass:lib',
-      gulp.series('js', 'js:ES6')
-    )
-  )
-);*/
+ gulp.series(
+ 'clean',
+ gulp.parallel(
+ 'assets', 'img', 'css:fonts', 'sass:theme', 'css:lib', 'sass:lib',
+ gulp.series('js', 'js:ES6')
+ )
+ )
+ );*/
 
-gulp.task('build', gulp.series('clean', 'assets', 'img', 'css:fonts', 'sass:theme', 'css:lib', 'sass:lib', 'js', 'js:ES6'));
+//gulp.task('build', gulp.series('clean', 'assets', 'img', 'css:fonts', 'sass:theme', 'css:lib', 'sass:lib', 'js', 'js:ES6'));
 
-gulp.task('default', gulp.series('build'));
+//gulp.task('default', gulp.series('build'));
 
-gulp.task('dev', gulp.series('build', 'watch'));
+//gulp.task('dev', gulp.series('build', 'watch'));
 
 /*FTP tasks*/
 const ftpDataDefault = {
@@ -314,110 +314,55 @@ for(let key in ftpData) {
  }*/
 
 
-
-
-
 gulp.task('ftp:all', (callback) => {
   let ftpTasksArr = [];
-  let index = 0;
-  //let pipe;
+let index = 0;
+//let pipe;
 
-  for(let key in ftpData) {
-    let currFtpData = ftpData[key];
-    //console.dir(currFtpData);
+for(let key in ftpData) {
+  let currFtpData = ftpData[key];
+  //console.dir(currFtpData);
 
-    //let func = ;
-    let taskName = currFtpData.host; //`ftp-task-${index}`;
-    gulp.task(taskName, () => {
-      let conn = ftp.create({
-        host: currFtpData.host,
-        user: currFtpData.user,
-        pass: currFtpData.pass,
-        parallel: currFtpData.parallel,
-        log: currFtpData.log
-      });
-
-      return gulp.src(currFtpData.src, {base: dest, buffer: false})
-        .pipe(conn.newer(currFtpData.dest))
-        .pipe(conn.dest(currFtpData.dest));
+  //let func = ;
+  let taskName = currFtpData.host; //`ftp-task-${index}`;
+  gulp.task(taskName, () => {
+    let conn = ftp.create({
+      host: currFtpData.host,
+      user: currFtpData.user,
+      pass: currFtpData.pass,
+      parallel: currFtpData.parallel,
+      log: currFtpData.log
     });
 
-    ftpTasksArr.push(taskName);
-    index++;
-  }
+  return gulp.src(currFtpData.src, {base: dest, buffer: false})
+    .pipe(conn.newer(currFtpData.dest))
+    .pipe(conn.dest(currFtpData.dest));
+});
 
-  console.dir(ftpTasksArr);
+  ftpTasksArr.push(taskName);
+  index++;
+}
 
-  gulp.series(ftpTasksArr)(callback);
-  //callback();
+console.dir(ftpTasksArr);
+
+gulp.series(ftpTasksArr)(callback);
+//callback();
 });
 
 gulp.task('ftp', () => {
   let conn = ftp.create({
-    host: '192.185.226.145',
-    user: 'dimon@mrhummer.com',
-    pass: 'fDCHGDVbmwsh4Q5',
+    host: '83.220.169.194',
+    user: 'talantaverstka',
+    pass: 'B9a2B8d6',
     parallel: 5,
     log: gutil.log
   });
-  let globs = ['dist/**/*.*', '!dist/bindex.html'];
+let globs = ['src/**/*.*'];
 
-  return gulp.src(globs, {base: dest, buffer: false})
-    .pipe(conn.newer('/'))
-    .pipe(conn.dest('/'));
+return gulp.src(globs, {base: base, buffer: false})
+  .pipe(conn.newer('/www/verstka.talanta.ru/metro/'))
+  .pipe(conn.dest('/www/verstka.talanta.ru/metro/'));
 });
 
-//gulp.task('ftp:all', gulp.parallel('ftp:flexorm', 'ftp:seledka', 'ftp:jeto', 'ftp:fashion'));
-
-/*debugger*/
-
-/*gulp.task('assets', () => {
-  return gulp.src(path.src.assets, {base: base})
-  /!*.on('data', (file) => {
-   console.log({
-   contents: file.contents,
-   path: file.path,
-   cwd: file.cwd,
-   base: file.base,
-   relative: file.relative,
-   dirname: file.dirname,
-   basename: file.basename,
-   stem: file.stem,
-   extname: file.extname
-   });
-   //console.dir(file);
-   })*!/
-  //.pipe(debug())
-    .pipe(gulp.dest(dest));
-});*/
-/*gulp.task('hello', function (callback) {
- console.log('hello');
- var promise = new Promise((resolve, reject) => {
- resolve('result');
- console.dir(promise);
- });
-
- return promise;
- callback();
- });*/
-
-/*gulp.task('upload:css', () => {
-  let conn = ftp.create({
-    host: 'seledka-fit.ru',
-    user: 'seledka_fit_jeto',
-    pass: '1F3i2I4u',
-    parallel: 10,
-    log: gutil.log
-  });
-  let globs = [
-    'dist/fonts/!**!/!*.*',
-    'dist/css/!**!/!*.*',
-    'dist/img/!**!/!*.*',
-  ];
-
-  return gulp.src(globs, {base: 'dist', buffer: false})
-    .pipe(conn.newer('/sites/all/themes/jflex/library/'))
-    .pipe(conn.dest('/sites/all/themes/jflex/library/'));
-});*/
 
 
